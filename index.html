@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>
+    </header>
+    <main class="apresentacao">
+            <section class="apresentacao__conteudo">
+                <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong class="Título-destaque">com um Front-end de qualidade!</strong></h1>
+                <p class="apresentacao__conteudo__texto">Olá! Sou o Diogo Silva Roque, desenvolvedor Front-end com especialidade em React, HTML e CSS. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
+                    <div class="apresentacao__links">
+                        <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+                    <a class="apresentacao__links__navegacao" href="https://instagram.com/_roque016">
+                        <img src="imagens/instagram.png" alt=""> Instagram
+                    </a>
+                    <a class="apresentacao__links__navegacao"
+                    href="https://github.com/diogo016">
+                    <img src="imagens/github.png" alt="">GitHub</a>
+                    
+                        
+                        </div>
+        </section>
+        <img class="apresentacao__imagem" src="imagens/442e7718-ca60-431c-a213-be76eb14a083.jpg" alt="Foto da Joana Santos Programando">
+    </main>
+    <footer class="rodape">
+        <p>Desenvolvido por Diogo.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollReveal/4.0.7/scrollreveal.min.js"></script>
+    <script>
+        
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+       
+        gsap.from(".apresentacao__conteudo", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".apresentacao__imagem", {
+            opacity: 0,
+            x: 50,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        
+        ScrollReveal().reveal('.apresentacao__conteudo', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-out',
+            origin: 'bottom'
+        });
+
+        ScrollReveal().reveal('.apresentacao__imagem', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-out',
+            origin: 'right'
+        });
+    </script>
+</body>
+</html>
